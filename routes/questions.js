@@ -13,8 +13,12 @@ const questionsValidator = require("../utils/validation/Questions");
 
 // * To get Question According to round
 router.get("/get", authChecker, hasTeamID, currentRound, async (req, res) => {
+  // console.log("cr", req.currentRound);
   if (req.eventTeam[req.currentRound].submitted)
-    return res.send({ submitted: req.eventTeam[req.currentRound].submitted });
+    return res.send({
+      submitted: req.eventTeam[req.currentRound].submitted,
+      currentRound: req.currentRound,
+    });
 
   if (!req.eventTeam[req.currentRound].updated) {
     const questions = await Question.find({ type: req.currentRound });
@@ -29,6 +33,7 @@ router.get("/get", authChecker, hasTeamID, currentRound, async (req, res) => {
     );
     res.json({
       question,
+      currentRound: req.currentRound,
     });
   }
 });

@@ -39,11 +39,28 @@ export default function Order(props) {
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="customized table">
         <TableHead>
-          <TableRow >
-            <StyledTableCell style={{backgroundColor:'#041544'}}>Components</StyledTableCell>
-            <StyledTableCell align="right" style={{backgroundColor:'#041544'}}>Price</StyledTableCell>
-            <StyledTableCell align="right" style={{backgroundColor:'#041544'}}>Quantity</StyledTableCell>
-            <StyledTableCell align="right" style={{backgroundColor:'#041544'}}>Price Total</StyledTableCell>
+          <TableRow>
+            <StyledTableCell style={{ backgroundColor: "#041544" }}>
+              Components
+            </StyledTableCell>
+            <StyledTableCell
+              align="right"
+              style={{ backgroundColor: "#041544" }}
+            >
+              Price
+            </StyledTableCell>
+            <StyledTableCell
+              align="right"
+              style={{ backgroundColor: "#041544" }}
+            >
+              Quantity
+            </StyledTableCell>
+            <StyledTableCell
+              align="right"
+              style={{ backgroundColor: "#041544" }}
+            >
+              Price Total
+            </StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -57,7 +74,7 @@ export default function Order(props) {
                 {props.Quant[row._id]}
               </StyledTableCell>
               <StyledTableCell align="right">
-                ${row.price * props.Quant[row._id]}
+                ₹{row.price * props.Quant[row._id]}
               </StyledTableCell>
             </StyledTableRow>
           ))}

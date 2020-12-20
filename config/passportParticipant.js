@@ -32,8 +32,11 @@ passport.use(
           message: "No team for this event found.",
         });
       }
-      // console.log()
-      // console.log(team);
+      if (team.toJSON().members.length < 2) {
+        return done(null, false, {
+          message: "Time should have at least 2 members.",
+        });
+      }
       const local_team = await EventTeam.findOne({
         team: team._id,
       });

@@ -53,6 +53,8 @@ router.post("/round", async (req, res) => {
   config.currentRound = value.currentRound;
   await config.save();
   req.app.set("config", config);
+  // const z = req.app.set("config");
+  // console.log(z);
   res.send({ msg: `round set to ${config.currentRound}`, data: config });
 });
 

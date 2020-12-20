@@ -44,7 +44,7 @@ function Questions() {
   const [message, setMessage] = useState(null);
   const [myComponents, setMyComponents] = useState([]);
   const [submitted, setSubmitted] = useState(false);
-
+  const [round, setRound] = useState("");
   const confirmAlert = ({ title, message }) => {
     return confirmationSwal.fire({
       title: `<strong><u>${title}</u></strong>`,
@@ -132,10 +132,11 @@ function Questions() {
         if (data.submitted) setSubmitted(true);
         else {
           setSubmitted(false);
-          console.log(data);
+          console.log("question ", data);
           setQuestion(data.question);
         }
 
+        setRound(data.currentRound);
         // console.log(data);
       })
       .catch((err) => {
@@ -217,7 +218,7 @@ function Questions() {
               </h1>
             </div>
             <div className="jumbotron">
-              <p>ALREADY SUBMITTED</p>
+              <p>Solution for {round} submitted </p>
             </div>
           </div>
         </div>
@@ -241,6 +242,10 @@ function Questions() {
             </h1>
           </div>
           <div className="jumbotron">
+            <p style={{ whiteSpace: "pre-line" }}>
+              {" "}
+              Round : {round.slice(-1)} / 3
+            </p>
             <p style={{ whiteSpace: "pre-line" }}>
               {question.question ? question.question : null}
             </p>
