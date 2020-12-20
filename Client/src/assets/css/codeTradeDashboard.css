@@ -44,17 +44,18 @@ body {
   opacity: 0.4;
 }
 
-.swal2-success-circular-line-left{
-  background-color: #041544;
+.swal2-success-circular-line-left {
+  background-color: #041544 !important;
 }
-.swal2-modal{
-  background-color: #041544;
-  box-shadow: 0px 0px 10px #81C2F7;
+.swal2-modal {
+  background-color: #041544 !important;
+  box-shadow: 0px 0px 10px #81c2f7 !important;
 }
-.swal2-content, .swal2-title{
-  color: #fff;
+.swal2-content,
+.swal2-title {
+  color: #fff !important;
 }
-.swal2-confirm{
+.swal2-confirm {
   background-color: #fff !important;
 }
 
@@ -202,8 +203,8 @@ div.dashboard h1 {
   line-height: 1em;
 }
 
-span .code:hover{
- color: #fff !important;
+span .code:hover {
+  color: #fff !important;
 }
 
 /* -----heading------ */
