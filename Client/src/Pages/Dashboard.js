@@ -111,7 +111,7 @@ function Dashboard() {
         // console.log("news", data);
         setAlert({
           title: `News flashed`,
-          message: `new news check the dashboard`,
+          message: `news flash!!! check the dashboard`,
           severity: "info",
         });
         setOpen(true);

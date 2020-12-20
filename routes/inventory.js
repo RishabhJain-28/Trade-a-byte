@@ -98,7 +98,7 @@ router.post("/price/change", admin, (req, res) => {
   if (error) return res.status(400).send({ msg: error.details[0].message });
   Components.find({}).then((data) => {
     data.forEach(async (rec) => {
-      rec.price = rec.price + value.factor;
+      rec.price = rec.price * value.factor;
       await rec.save();
     });
     res.json("Prices changed successfully");
