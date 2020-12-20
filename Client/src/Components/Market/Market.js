@@ -65,7 +65,7 @@ function InventoryIn() {
     if (!e.target.id) return;
     const price = Components.filter((data) => data._id === e.target.id);
     const cal = money - price[0].price;
-    if (cal < 0) return;
+    // if (cal < 0) return;
     setMoney(cal);
     setQuantity({
       ...Quantity,
@@ -80,7 +80,7 @@ function InventoryIn() {
     if (Quantity[e.target.id] <= 0) return;
     const price = Components.filter((data) => data._id === e.target.id);
     const cal = money + price[0].price;
-    if (cal > 10000) return;
+    // if (cal > 10000) return;
     setMoney(cal);
     setQuantity({
       ...Quantity,
