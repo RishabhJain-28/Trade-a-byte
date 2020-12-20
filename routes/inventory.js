@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const Components = require("../models/Components");
 const EventTeam = require("../models/EventTeam");
+const Team = require("../models/Team");
 
 //* Middleware
 const hasTeamID = require("../Middleware/hasTeamID");
@@ -115,6 +116,24 @@ router.post("/price/change/one", admin, (req, res) => {
     await data.save();
     res.json(`Price of ${data.name} changed successfully`);
   });
+});
+
+//* increase balance of a team
+router.post("/balance", admin, async (req, res) => {
+  const { value, error } = inventoryValidator.increaseBalance(req.body);
+  if (error) return res.status(400).send({ msg: error.details[0].message });
+  let team = await Team.findOne({ teamName: value.teamName });
+  if (!team)
+    return res.status(400).send(`NO TEAM FOUND WITH NAME ${value.teamName}`);
+  team = team.toJSON();
+  const eventTeam = await EventTeam.findOne({ team: team._id });
+  if (!eventTeam)
+    return res
+      .status(400)
+      .send(`NO EVENT TEAM FOUND WITH NAME ${value.teamName}`);
+  eventTeam.balance += value.increase;
+  await eventTeam.save();
+  res.send({ teamName: team.teamName, eventTeam });
 });
 
 module.exports = router;
