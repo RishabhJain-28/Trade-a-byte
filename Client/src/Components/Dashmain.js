@@ -57,7 +57,7 @@ class Dashmain extends Component {
               this.state.news.map((data) => {
                 return (
                   <div key={data._id} className="jumbotron">
-                    <p>{data.body}</p>
+                    <p style={{ whiteSpace: "pre-line" }}>{data.body}</p>
                   </div>
                 );
               })
