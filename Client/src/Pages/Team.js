@@ -9,13 +9,13 @@ const Team = () => {
     const { data } = await axios.post("/team/create", {
       teamName,
     });
-    console.log(data);
+    // console.log(data);
     setCode(data.code);
   };
   const joinTeam = async () => {
     //! try catch
     const { data } = await axios.get(`/team/join/${code}`);
-    console.log(data);
+    // console.log(data);
     setTeamName(data.teamName);
     // setCode(data.code);
   };

@@ -61,11 +61,9 @@ function InventoryIn() {
   }, [error]);
 
   const onIncrement = (e) => {
-    console.log(e);
+    // console.log(e);
     if (!e.target.id) return;
-    const price = Components.filter(
-      (data) => data._id === e.target.id
-    );
+    const price = Components.filter((data) => data._id === e.target.id);
     const cal = money - price[0].price;
     if (cal < 0) return;
     setMoney(cal);
@@ -132,34 +130,34 @@ function InventoryIn() {
   if (loading) return <h4 style={{ color: "white" }}>LOADING</h4>;
   return (
     <>
-    <Grid container direction="column">
-      <Grid container item>
-        <Grid item xs={6} sm={10} />
-        <Grid item xs={2} sm={2}>
-          <Cart
-            Quant={Quantity}
+      <Grid container direction="column">
+        <Grid container item>
+          <Grid item xs={6} sm={10} />
+          <Grid item xs={2} sm={2}>
+            <Cart
+              Quant={Quantity}
+              data={Components}
+              money={money}
+              buyNow={buyNow}
+              initialMoney={10000}
+              balance={balance}
+            />
+          </Grid>
+        </Grid>
+        <br />
+        <Grid item container>
+          <Grid item xs={1} sm={2} />
+          <Products
             data={Components}
             money={money}
-            buyNow={buyNow}
-            initialMoney={10000}
-            balance={balance}
+            Quant={Quantity}
+            onIncrement={onIncrement}
+            onDecrement={onDecrement}
           />
+          {/* <button onClick={buyNow}>CLICK FOFFR COMPS</button> */}
+          <Grid item xs={1} sm={2} />
         </Grid>
       </Grid>
-      <br />
-      <Grid item container>
-        <Grid item xs={1} sm={2} />
-        <Products
-          data={Components}
-          money={money}
-          Quant={Quantity}
-          onIncrement={onIncrement}
-          onDecrement={onDecrement}
-        />
-        {/* <button onClick={buyNow}>CLICK FOFFR COMPS</button> */}
-        <Grid item xs={1} sm={2} />
-      </Grid>
-    </Grid>
     </>
   );
 }

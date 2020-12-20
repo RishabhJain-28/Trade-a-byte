@@ -14,7 +14,7 @@ const configValidator = require("../utils/validation/Config");
 // * get current config
 router.get("/", async (req, res) => {
   const config = req.app.get("config");
-  console.log("c", config);
+  // console.log("c", config);
   res.send(config);
 });
 

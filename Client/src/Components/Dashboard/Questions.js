@@ -86,8 +86,8 @@ function Questions() {
       });
       componentsCart = componentsCart.filter((c) => c.qty > 0);
 
-      console.log("componentsCart", JSON.stringify(componentsCart));
-      console.log("cart", JSON.stringify(cart));
+      // console.log("componentsCart", JSON.stringify(componentsCart));
+      // console.log("cart", JSON.stringify(cart));
 
       const formData = new FormData();
       formData.append("components", JSON.stringify(componentsCart));
@@ -100,7 +100,7 @@ function Questions() {
         },
       });
       const { components, msg, submitted } = data;
-      console.log("data", components);
+      // console.log("data", components);
       const myComponents = components.map((c) => {
         return {
           _id: c._id,
@@ -108,7 +108,7 @@ function Questions() {
           ...c.comp,
         };
       });
-      console.log("my", myComponents);
+      // console.log("my", myComponents);
       setMyComponents(myComponents);
       setSubmitted(submitted);
       setMessage(msg);
@@ -132,7 +132,7 @@ function Questions() {
         if (data.submitted) setSubmitted(true);
         else {
           setSubmitted(false);
-          console.log("question ", data);
+          // console.log("question ", data);
           setQuestion(data.question);
         }
 
@@ -277,7 +277,7 @@ function Questions() {
             {file === null ? (
               <UploadButtons
                 handleFileInput={(e) => {
-                  console.log(e.target.files[0]);
+                  // console.log(e.target.files[0]);
                   setFile(e.target.files[0]);
                 }}
               />

@@ -10,9 +10,9 @@ class Dashmain extends Component {
   };
   componentDidMount() {
     // const user = JSON.parse(localStorage.getItem("user"));
-    console.log(this.props.user);
+    // console.log(this.props.user);
     axios.get("/news/get").then((data) => {
-      console.log(data);
+      // console.log(data);
       this.setState({
         news: data.data,
         // user: user,
@@ -70,7 +70,7 @@ class Dashmain extends Component {
                 No News available to show
               </Typography>
             )}
-                <Float />
+            <Float />
           </div>
         </div>
       </div>

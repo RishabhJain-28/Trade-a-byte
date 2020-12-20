@@ -77,7 +77,7 @@ const Trading = () => {
         code,
       });
 
-      console.log(data);
+      // console.log(data);
       Swal.fire({
         position: "center",
         icon: "success",

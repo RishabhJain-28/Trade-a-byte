@@ -5,6 +5,7 @@ const EventTeam = require("../models/EventTeam");
 //* Middleware
 const hasTeamID = require("../Middleware/hasTeamID");
 const admin = require("../Middleware/admin");
+const marketAllowed = require("../Middleware/marketAllowed");
 
 //* Validator
 const inventoryValidator = require("../utils/validation/Inventory");
@@ -42,12 +43,12 @@ router.get("/team/get/:id", admin, async (req, res) => {
     },
   });
   if (!eventTeam) return res.status(400).send({ msg: "NO INVENTORY FOUND" });
-  console.log("eventTeam", eventTeam);
+  // console.log("eventTeam", eventTeam);
   res.send(eventTeam);
 });
 
 //* buy componenets from inventory for a team
-router.post("/buy", hasTeamID, async (req, res) => {
+router.post("/buy", marketAllowed, hasTeamID, async (req, res) => {
   const { value: data, error } = inventoryValidator.buyComponents(req.body);
   if (error) return res.status(400).send({ msg: error.details[0].message });
   const allComponents = await Components.find()

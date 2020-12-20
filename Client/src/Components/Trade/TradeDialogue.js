@@ -32,7 +32,7 @@ const TradeDialogue = ({
       const { data: responseData } = await axios.get(
         `/transaction/accept/${data._id}`
       );
-      console.log(responseData);
+      // console.log(responseData);
       const temp = transactions.filter((t) => t._id !== responseData._id);
       setTransactions([...temp, responseData]);
 
@@ -53,7 +53,7 @@ const TradeDialogue = ({
       const { data: responseData } = await axios.get(
         `/transaction/reject/${data._id}`
       );
-      console.log(responseData);
+      // console.log(responseData);
       const temp = transactions.filter((t) => t._id !== responseData._id);
       setTransactions([...temp, responseData]);
 
@@ -73,7 +73,7 @@ const TradeDialogue = ({
       const { data: responseData } = await axios.get(
         `/transaction/cancel/${data._id}`
       );
-      console.log(responseData);
+      // console.log(responseData);
       const temp = transactions.filter((t) => t._id !== responseData._id);
       setTransactions([...temp, responseData]);
 

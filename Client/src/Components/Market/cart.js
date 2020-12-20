@@ -23,7 +23,7 @@ export default function Cart(props) {
 
   const handleClose = () => {
     setOpen(false);
-    console.log("cancel");
+    // console.log("cancel");
   };
   const buyNow = () => {
     props.buyNow();

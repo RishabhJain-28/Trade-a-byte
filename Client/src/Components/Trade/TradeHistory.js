@@ -12,6 +12,7 @@ import {
 import moment from "moment";
 import axios from "../../util/axios";
 import TradeDialogue from "./TradeDialogue";
+import Swal from "sweetalert2";
 
 const TradeHistory = ({ team, updateTransaction }) => {
   const [transactions, setTransactions] = useState([]);
@@ -27,9 +28,24 @@ const TradeHistory = ({ team, updateTransaction }) => {
   const classes = useStyles();
 
   const getTradeHistory = async () => {
-    const { data } = await axios.get("/transaction/team/all");
-    console.log("tradedata: ", data);
-    setTransactions(data);
+    try {
+      const { data } = await axios.get("/transaction/team/all");
+      // console.log("tradedata: ", data);
+      setTransactions(data);
+    } catch (err) {
+      // setError(err.response?.data?.msg);
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: "Error",
+        text: err.response?.data?.msg,
+        timer: 4000,
+        showConfirmButton: true,
+      }).then(() => {
+        // setLoading(false);
+        // setError(null);
+      });
+    }
   };
 
   const handleClickOpen = () => {
@@ -38,7 +54,7 @@ const TradeHistory = ({ team, updateTransaction }) => {
 
   const handleClose = () => {
     setOpen(false);
-    console.log("cancel");
+    // console.log("cancel");
   };
   useEffect(() => {
     getTradeHistory();

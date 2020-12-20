@@ -45,7 +45,7 @@ passport.use(
           team: team._id,
           balance: 10000,
         });
-        console.log("new team ", newLocalTeam);
+        // console.log("new team ", newLocalTeam);
         await newLocalTeam.save();
       }
       // console.log(accessToken);

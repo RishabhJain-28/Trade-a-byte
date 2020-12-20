@@ -38,7 +38,7 @@ router.get("/get", authChecker, hasTeamID, currentRound, async (req, res) => {
   }
 });
 //* add a question
-router.post("/add", (req, res) => {
+router.post("/add", admin, (req, res) => {
   const { value, error } = questionsValidator.add(req.body);
   if (error) return res.status(400).send({ msg: error.details[0].message });
   const Ques = new Question({
@@ -85,7 +85,9 @@ router.post("/upload", authChecker, currentRound, async (req, res) => {
   let { name: filename, mimetype, data } = req.files.file;
   const driveResponse = drive.files.create({
     requestBody: {
-      name: `${req.user.toJSON().teams[0].teamName}_${filename}`,
+      name: `${req.user.toJSON().teams[0].teamName}_${
+        req.currentRound
+      }_${filename}`,
       mimeType: mimetype,
       parents: ["17tzNE-ke80YTtKvwdkHUH6HT-kvy_QdJ"],
     },
@@ -122,7 +124,7 @@ router.post("/upload", authChecker, currentRound, async (req, res) => {
         if (Object.keys(cart).length !== 0)
           return res
             .status(400)
-            .send({ msg: "Insufficent mnm in the inventory" });
+            .send({ msg: "Insufficent items in the inventory" });
         eventTeam.components = eventTeam.components.filter((c) => c.qty > 0);
 
         await eventTeam.save();

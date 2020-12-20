@@ -22,7 +22,7 @@ function InventoryIn() {
       setBalance(balance);
       setInventory(components);
       setLoading(false);
-      console.log(components);
+      // console.log(components);
     } catch (err) {}
   };
   useEffect(() => {

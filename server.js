@@ -27,9 +27,14 @@ const participant = require("./routes/Participant");
 const inventory = require("./routes/inventory");
 const news = require("./routes/news");
 // const invigilator = require("./routes/Invigilator");
-const team = require("./routes/Team");
+// const team = require("./routes/Team");
 const questions = require("./routes/questions");
 const config = require("./routes/Config");
+
+// * Middleware
+const questionAllowed = require("./Middleware/questionAllowed");
+const tradeAllowed = require("./Middleware/tradeAllowed");
+const admin = require("./Middleware/admin");
 
 // * Passport Setup
 require("./config/passportParticipant");
@@ -43,15 +48,15 @@ app.use(express.static(path.resolve(__dirname, "public")));
 require("./config/db");
 
 // * Routes
-app.use("/api/transaction", transaction);
+app.use("/api/transaction", tradeAllowed, transaction);
 app.use("/api/auth", auth);
 app.use("/api/participant", participant);
 app.use("/api/inventory", inventory);
-app.use("/api/team", team);
+// app.use("/api/team", team);
 app.use("/api/news", news);
 // app.use("/api/invigilator", invigilator);
-app.use("/api/questions", questions);
-app.use("/api/config", config);
+app.use("/api/questions", questionAllowed, questions);
+app.use("/api/config", admin, config);
 
 // * Server
 const port = process.env.PORT || 5000;
@@ -73,12 +78,12 @@ if (process.env.NODE_ENV === "production") {
   app.get("/*", function (req, res) {
     res.sendFile(path.resolve(__dirname, "Client", "build", "index.html"));
   });
-  // process.on("uncaughtException", (err, promise) => {
-  //   console.log(`Error: ${err.message}`);
-  // });
+  process.on("uncaughtException", (err, promise) => {
+    console.log(`Error: ${err.message}`);
+  });
 
-  // // Handle unhandled promise rejections
-  // process.on("unhandledRejection", (err, promise) => {
-  //   console.log(`Error: ${err.message}`);
-  // });
+  // Handle unhandled promise rejections
+  process.on("unhandledRejection", (err, promise) => {
+    console.log(`Error: ${err.message}`);
+  });
 }

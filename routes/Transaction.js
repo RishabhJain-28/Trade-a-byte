@@ -2,8 +2,8 @@ const router = require("express").Router();
 const UIDGenerator = require("uid-generator");
 const rateLimit = require("express-rate-limit");
 const limiter = rateLimit({
-  windowMs: 5 * 60 * 1000, // 5 minutes
-  max: 10,
+  windowMs: 10 * 60 * 1000, // 5 minutes
+  max: 20,
   handler: function (req, res) {
     // console.log(req.rateLimit);
     res
@@ -80,7 +80,7 @@ router.get("/start", limiter, hasTeamID, async (req, res) => {
 //! expire codes?
 
 // * Send a offer
-router.post("/offer", limiter, hasTeamID, async (req, res) => {
+router.post("/offer", hasTeamID, async (req, res) => {
   const { value, error } = transactionValidator.offer(req.body);
   if (error) return res.status(400).send({ msg: error.details[0].message });
   const {
@@ -184,7 +184,7 @@ router.get("/accept/:transaction_id", hasTeamID, async (req, res) => {
     },
   });
   let shouldReturn = false;
-  console.log();
+  // console.log();
   // console.log("rc");
   transaction.requestComponents.every((rc) => {
     let i = req.eventTeam.components.findIndex((c) => {

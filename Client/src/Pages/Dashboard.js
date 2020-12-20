@@ -81,9 +81,9 @@ function Dashboard() {
           severity: "info",
         });
         setOpen(true);
-        console.log("updated tran", data);
+        // console.log("updated tran", data);
         setUpdateTransaction(data);
-        console.log("OFFER");
+        // console.log("OFFER");
         //! cause refetch
       } else if (type === 2) {
         setAlert({
@@ -94,9 +94,9 @@ function Dashboard() {
           severity: status === "ACCEPTED" ? "success" : "error",
         });
         setOpen(true);
-        console.log("updated tran", data);
+        // console.log("updated tran", data);
         setUpdateTransaction(data);
-        console.log("OFFER");
+        // console.log("OFFER");
       } else if (type === 4) {
         setAlert({
           title: "OFFER CANCELED",
@@ -104,9 +104,9 @@ function Dashboard() {
           severity: "warning",
         });
         setOpen(true);
-        console.log("updated tran", data);
+        // console.log("updated tran", data);
         setUpdateTransaction(data);
-        console.log("OFFER");
+        // console.log("OFFER");
       } else if (type === 20) {
         // console.log("news", data);
         setAlert({
