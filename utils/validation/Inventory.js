@@ -27,9 +27,17 @@ const increasePriceForOne = (body) => {
   });
   return schema.validate(body);
 };
+const increaseBalance = (body) => {
+  const schema = Joi.object({
+    increase: Joi.number().required(),
+    teamName: Joi.string().required(),
+  });
+  return schema.validate(body);
+};
 
 module.exports = {
   buyComponents,
   increasePriceForAll,
   increasePriceForOne,
+  increaseBalance,
 };
