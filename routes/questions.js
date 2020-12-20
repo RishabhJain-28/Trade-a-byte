@@ -75,7 +75,6 @@ router.post("/upload", authChecker, currentRound, async (req, res) => {
   if (!req.files.file)
     //! validate=>allow only  text files
     return res.status(400).send({ msg: "No file found" });
-
   req.body.components = JSON.parse(req.body.components);
   req.body.cart = JSON.parse(req.body.cart);
 
@@ -83,6 +82,9 @@ router.post("/upload", authChecker, currentRound, async (req, res) => {
   if (error) return res.status(400).send({ msg: error.details[0].message });
 
   let { name: filename, mimetype, data } = req.files.file;
+  if(req.files.file.size > 1000000 ){
+    return res.status(400).send({msg : "File tooo large : Max 1 MB"});
+  }
   const driveResponse = drive.files.create({
     requestBody: {
       name: `${req.user.toJSON().teams[0].teamName}_${
