@@ -1,0 +1,241 @@
+button.confirm-alert {
+  font-family: poppins;
+  padding: 0.4rem 2rem;
+  margin: 0.5rem;
+  background: #18c012 !important;
+  color: #fff;
+  border: 2px solid #18c012;
+  border-radius: 30px;
+}
+button.reject-alert {
+  font-family: poppins;
+  padding: 0.4rem 2rem;
+  margin: 0.5rem;
+  background: #e60909 !important;
+  color: #fff;
+  border: 2px solid #e60909;
+  border-radius: 30px;
+}
+
+button.animated-button.thar-three {
+  color: #fff !important;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  border: 2px solid #fff;
+  transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+}
+button.animated-button.thar-three:hover {
+  color: black !important;
+  background-color: transparent;
+  text-shadow: nthree;
+}
+button.animated-button.thar-three:hover:before {
+  left: 0%;
+  color: #fff;
+  right: auto;
+  width: 100%;
+}
+button.animated-button.thar-three:before {
+  display: block;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 100%;
+  width: 0px;
+  z-index: -1;
+  content: "";
+  color: rgb(253, 253, 253) !important;
+  background: #fff;
+  transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+button.animated-button.thar-four {
+  color: #fff !important;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  border: 2px solid #fff;
+  transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+}
+button.animated-button.thar-four:hover {
+  color: black !important;
+  background-color: transparent;
+  text-shadow: nfour;
+}
+button.animated-button.thar-four:hover:before {
+  right: 0%;
+  left: auto;
+  color: #fff;
+  width: 100%;
+}
+button.animated-button.thar-four:before {
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 0px;
+  z-index: -1;
+  content: "";
+  color: rgb(252, 250, 250) !important;
+  background: #fff;
+  transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+#question-text {
+  color: white;
+}
+#next-btn {
+  margin: 1vh 0vw;
+}
+/* --------------MEDIA QUERY------------- */
+
+@media (min-width: 1550px) {
+  .container {
+    max-width: 1245px !important;
+  }
+
+  .side-menu span {
+    font-size: 1.2em;
+    margin-left: 10px;
+  }
+
+  .side-menu i {
+    font-size: 1.2em;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .side-menu span {
+    font-size: 0.7em;
+    margin-left: 10px;
+  }
+
+  .side-menu i {
+    font-size: 0.7em;
+    margin-left: 20px;
+  }
+
+  .side-menu .avatar img {
+    height: 12vh;
+    width: auto;
+    border: 0.15vw solid #fff;
+    box-shadow: 0 0 0 4px #fff;
+  }
+}
+
+@media (max-width: 850px) {
+  .side-menu a span {
+    display: none;
+  }
+
+  .side-menu .profile {
+    display: none;
+  }
+
+  .side-menu {
+    width: 13vw;
+  }
+
+  .side-menu a i {
+    display: block;
+    line-height: 10vh;
+    margin-left: 0;
+    font-size: 4vh;
+  }
+
+  .col-md-12,
+  .col-sm-12 {
+    margin: 5vh 0 0 17vw;
+    padding: 0;
+    width: 120vw;
+  }
+
+  .logo a img {
+    margin-left: 1vw;
+    height: 2.5vw;
+    width: auto;
+  }
+
+  .dashboard span {
+    font-size: 6vh;
+    margin-bottom: 3vh;
+  }
+
+  .jumbotron {
+    align-content: center !important;
+    font-size: 2vh;
+  }
+
+  .container {
+    align-content: center;
+    padding: 0 !important;
+    margin-left: 1vw !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .side-menu {
+    width: 12vw;
+  }
+
+  .side-menu a i {
+    align-content: center !important;
+    line-height: 10vh;
+    margin-left: 0;
+    font-size: 4vh;
+  }
+
+  .col-12 {
+    margin: 5vh 0 0 17vw;
+    padding: 0;
+    width: 120vw;
+  }
+
+  .logo a img {
+    margin-left: 1vw;
+    height: 3vw;
+    width: auto;
+  }
+
+  .container {
+    align-content: center;
+    padding: 0 !important;
+    margin-left: 1vw !important;
+    margin-right: 1vw !important;
+  }
+
+  .dashboard span {
+    font-size: 4vh;
+    margin-bottom: 3vh;
+  }
+
+  .dashboard {
+    margin-left: 3vw;
+  }
+
+  .jumbotron {
+    font-size: 2vh;
+  }
+}
+
+@media (max-width: 450px) {
+  .dashboard {
+    text-align: center !important;
+    align-content: center !important;
+  }
+  .side-menu a i {
+    display: block;
+    line-height: 8vh;
+    text-align: center;
+    margin-left: 0;
+    font-size: 6vw;
+  }
+
+  .container {
+    margin-left: 0.2vw !important;
+    margin-right: 1vw !important;
+  }
+}

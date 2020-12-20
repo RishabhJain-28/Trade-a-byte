@@ -1,0 +1,55 @@
+button.mark-correct {
+  font-family: poppins;
+  left: 50% !important;
+  width: 25vw;
+  size: 5rem;
+  margin: 1rem;
+  padding: 0.4rem 2rem;
+  color: #7fff00 !important;
+  /* position: absolute; */
+  border: 2px solid #7fff00;
+  border-radius: 30px;
+  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+button.mark-reject {
+  font-family: poppins;
+  left: 50% !important;
+  width: 25vw;
+  size: 5rem;
+  margin: 1rem;
+  padding: 0.4rem 2rem;
+  color: #e60909 !important;
+  /* position: absolute; */
+  border: 2px solid #e60909;
+  border-radius: 30px;
+  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+.confirm-btn {
+  font-family: poppins;
+  /* left: 50% !important; */
+  /* width: 25vw;
+  size: 2.5rem; */
+  padding: 0.4rem 2rem;
+  margin: 0.5rem;
+  background: #18c012 !important;
+  color: #fff;
+  /* position: absolute; */
+  border: 2px solid #18c012;
+  border-radius: 30px;
+  /* transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s; */
+}
+.reject-btn {
+  font-family: poppins;
+  /* left: 50% !important; */
+  /* width: 25vw;
+  size: 2.5rem; */
+  padding: 0.4rem 2rem;
+  margin: 0.5rem;
+  background: #e60909 !important;
+  color: #fff;
+  /* position: absolute; */
+  border: 2px solid #e60909;
+  border-radius: 30px;
+  /* transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s; */
+}

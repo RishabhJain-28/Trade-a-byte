@@ -1,0 +1,239 @@
+/* ------intro----- */
+
+div .jumbotron {
+  background-color: transparent;
+  padding: 2vh 3vw;
+  margin: 1vh auto;
+  width: 65vw;
+  color: white;
+}
+
+/* .body-container{
+  text-align: center !important;
+  width: 100%;
+  margin-left: 35vw;
+  margin-right: 0vw !important;
+} */
+/* -----send req----- */
+.view {
+  text-align: center !important;
+  margin-bottom: 10vh !important;
+  margin-top: 4vh;
+}
+
+
+a.trade,
+button.trade {
+  font-family: poppins;
+  left: 50% !important;
+  width: 25vw;
+  size: 5rem;
+  padding: 0.4rem 2rem;
+  color: #fff !important;
+  position: absolute;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+a.trade:hover {
+  color: #000 !important;
+  background-color: transparent;
+  text-shadow: none;
+  border-radius: 30px;
+}
+
+a.trade:hover:before {
+  bottom: 0%;
+  top: auto;
+  height: 100%;
+  border-radius: 30px;
+}
+
+a.trade:before {
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 0px;
+  border-radius: 30px;
+  width: 100%;
+  z-index: -1;
+  content: "";
+  color: #000 !important;
+  background: #fff;
+  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+/* ------OR------- */
+a.or,
+button.or {
+  font-family: poppins;
+  left: 50% !important;
+  width: 25vw;
+  size: 5rem;
+  padding: 0.4rem 2rem;
+  color: #fff !important;
+  position: absolute;
+  border: 2px solid #fff;
+  border-radius: 30px;
+}
+
+/* -------- */
+
+@media (min-width: 744px) {
+  .component-list {
+    margin-bottom: 0;
+  }
+}
+
+/* --------------MEDIA QUERY------------- */
+
+@media (min-width: 1550px) {
+  .container {
+    max-width: 1245px !important;
+  }
+
+  .side-menu span {
+    font-size: 1.2em;
+    margin-left: 10px;
+  }
+
+  .side-menu i {
+    font-size: 1.2em;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .side-menu span {
+    font-size: 0.7em;
+    margin-left: 10px;
+  }
+
+  .side-menu i {
+    font-size: 0.7em;
+    margin-left: 20px;
+  }
+
+  .side-menu .avatar img {
+    height: 12vh;
+    width: auto;
+    border: 0.15vw solid #fff;
+    box-shadow: 0 0 0 4px #fff;
+  }
+}
+
+@media (max-width: 850px) {
+  .side-menu a span {
+    display: none;
+  }
+
+  .side-menu .profile {
+    display: none;
+  }
+
+  .side-menu {
+    width: 13vw;
+  }
+
+  .side-menu a i {
+    display: block;
+    line-height: 10vh;
+    margin-left: 0;
+    font-size: 4vh;
+  }
+
+  .col-md-12,
+  .col-sm-12 {
+    margin: 5vh 0 0 17vw;
+    padding: 0;
+    width: 120vw;
+  }
+
+  .logo a img {
+    margin-left: 1vw;
+    height: 2.5vw;
+    width: auto;
+  }
+
+  .dashboard span {
+    font-size: 6vh;
+    margin-bottom: 3vh;
+  }
+
+  .jumbotron {
+    align-content: center !important;
+    font-size: 2vh;
+  }
+
+  .container {
+    align-content: center;
+    padding: 0 !important;
+    margin-left: 1vw !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .side-menu {
+    width: 12vw;
+  }
+
+  .side-menu a i {
+    align-content: center !important;
+    line-height: 10vh;
+    margin-left: 0;
+    font-size: 4vh;
+  }
+
+  .col-12 {
+    margin: 5vh 0 0 17vw;
+    padding: 0;
+    width: 120vw;
+  }
+
+  .logo a img {
+    margin-left: 1vw;
+    height: 3vw;
+    width: auto;
+  }
+
+  .container {
+    align-content: center;
+    padding: 0 !important;
+    margin-left: 1vw !important;
+    margin-right: 1vw !important;
+  }
+
+  .dashboard span {
+    font-size: 4vh;
+    margin-bottom: 3vh;
+  }
+
+  .dashboard {
+    margin-left: 3vw;
+  }
+
+  .jumbotron {
+    font-size: 2vh;
+  }
+}
+
+@media (max-width: 450px) {
+  .dashboard {
+    text-align: center !important;
+    align-content: center !important;
+  }
+  .side-menu a i {
+    display: block;
+    line-height: 8vh;
+    text-align: center;
+    margin-left: 0;
+    font-size: 6vw;
+  }
+
+  .container {
+    margin-left: 0.2vw !important;
+    margin-right: 1vw !important;
+  }
+}

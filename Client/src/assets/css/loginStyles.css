@@ -1,0 +1,95 @@
+a.login,
+button.login {
+  font-family: poppins;
+  width: 25vw;
+  size: 5rem;
+  padding: 0.4rem 2rem;
+  color: #fff !important;
+  position: absolute;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+.login:hover span {
+  color: #000 !important;
+  background-color: transparent;
+  text-shadow: none;
+  border-radius: 30px;
+  text-decoration: none !important;
+  font-weight: bold;
+}
+
+.login:hover:before {
+  bottom: 0%;
+  top: auto;
+  height: 100%;
+  border-radius: 30px;
+  text-decoration: none !important;
+}
+span.login:hover {
+  color: black !important;
+  text-decoration: none;
+  cursor: pointer;
+}
+.login:before {
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 0px;
+  border-radius: 30px;
+  width: 100%;
+  z-index: -1;
+  content: "";
+  color: #000 !important;
+  background: #fff;
+  transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+  text-decoration: none !important;
+}
+
+/* --------image-------- */
+.login-pic {
+  box-sizing: border-box;
+  box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+  -webkit-transform: translatey(0px);
+  transform: translatey(0px);
+  -webkit-animation: float 3s ease-in-out infinite;
+  animation: float 3s ease-in-out infinite;
+}
+
+@-webkit-keyframes float {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    -webkit-transform: translatey(0px);
+    transform: translatey(0px);
+  }
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+    -webkit-transform: translatey(-20px);
+    transform: translatey(-20px);
+  }
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    -webkit-transform: translatey(0px);
+    transform: translatey(0px);
+  }
+}
+
+@keyframes float {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    -webkit-transform: translatey(0px);
+    transform: translatey(0px);
+  }
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+    -webkit-transform: translatey(-20px);
+    transform: translatey(-20px);
+  }
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    -webkit-transform: translatey(0px);
+    transform: translatey(0px);
+  }
+}
